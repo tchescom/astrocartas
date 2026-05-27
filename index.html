@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Tangerine:wght@700&display=swap" rel="stylesheet">
 <style>
-     .ads-popup{
+.ads-popup{
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.8);
@@ -18,15 +18,17 @@
     justify-content: center;
     align-items: center;
     z-index: 999999;
-    padding: 20px;
 }
 
-.ads-popup ins{
-    width: 320px;
-    height: 320px;
+.ads-box{
+    width: 300px;
+    height: 250px;
     background: white;
-    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
+    border-radius: 12px;
 }
 
 .close-ad{
@@ -38,11 +40,8 @@
     border: none;
     border-radius: 50%;
     background: white;
-    color: black;
     font-size: 22px;
-    font-weight: bold;
     cursor: pointer;
-    z-index: 1000000;
 }
 /* ============================================================
    ORÁCULO MÍSTICO — Tarot Premium
@@ -352,21 +351,33 @@ footer{position:relative;z-index:10;text-align:center;padding:2rem 1rem;
 
     <button class="close-ad" onclick="fecharAd()">✕</button>
 
-   <ins class="adsbygoogle"
-    style="display:block; width:320px; height:320px;"
-    data-ad-client="ca-pub-3244338845125533"
-    data-ad-slot="4944882093"
-    data-adtest="on">
-</ins>
+    <div class="ads-box">
+
+        <ins class="adsbygoogle"
+            style="display:inline-block;width:300px;height:250px"
+            data-ad-client="ca-pub-3244338845125533"
+            data-ad-slot="3575960104"
+            data-adtest="on">
+        </ins>
+
+    </div>
 
 </div>
 
 <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+window.addEventListener("load", () => {
 
-    function fecharAd(){
-        document.getElementById("adsPopup").style.display = "none";
-    }
+    setTimeout(() => {
+
+        (adsbygoogle = window.adsbygoogle || []).push({});
+
+    }, 1000);
+
+});
+
+function fecharAd(){
+    document.getElementById("adsPopup").style.display = "none";
+}
 </script>
 <!-- Decorações de fundo -->
 <div class="stars"></div>
