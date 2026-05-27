@@ -10,41 +10,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Tangerine:wght@700&display=swap" rel="stylesheet">
 <style>
-.ads-popup{
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999999;
-}
-
-.ads-box{
-    width:300px;
-    min-width:300px;
-    height:250px;
-    min-height:250px;
-    background:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    overflow:hidden;
-    border-radius:12px;
-}
-
-.close-ad{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-    border: none;
-    border-radius: 50%;
-    background: white;
-    font-size: 22px;
-    cursor: pointer;
-}
 /* ============================================================
    ORÁCULO MÍSTICO — Tarot Premium
    HTML + CSS + JS puros, sem dependências externas
@@ -348,43 +313,6 @@ footer{position:relative;z-index:10;text-align:center;padding:2rem 1rem;
 </head>
 <body>
 
-<!-- POPUP ADSENSE -->
-<!-- POPUP ADSENSE -->
-<div class="ads-popup" id="adsPopup">
-
-    <button class="close-ad" onclick="fecharAd()">✕</button>
-
-    <div class="ads-box">
-
-        <ins class="adsbygoogle"
-            style="display:block;width:300px;height:250px"
-            data-ad-client="ca-pub-3244338845125533"
-            data-ad-slot="3575960104">
-        </ins>
-
-    </div>
-
-</div>
-
-<script>
-window.onload = function () {
-
-    setTimeout(() => {
-
-        try {
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        } catch(e) {
-            console.log(e);
-        }
-
-    }, 3000);
-
-};
-
-function fecharAd(){
-    document.getElementById("adsPopup").style.display = "none";
-}
-</script>
 <!-- Decorações de fundo -->
 <div class="stars"></div>
 <div class="stars2"></div>
@@ -428,8 +356,6 @@ function fecharAd(){
     <p class="deck-sub">Feche os olhos por um instante, formule sua pergunta em silêncio e deixe sua intuição guiar sua mão até o arcano que pulsa em sua alma.</p>
     <div class="deck" id="deck"></div>
   </section>
-
-<!-- meu anuncio -->
 
   <!-- RESULTADO -->
   <section class="scroll-room" id="scroll-room">
@@ -937,6 +863,23 @@ function speak(text){
   u.volume=1;
   window.speechSynthesis.speak(u);
 }
+// garante carregamento das vozes
+if("speechSynthesis" in window){
+  window.speechSynthesis.onvoiceschanged=()=>{};
+}
 
+<!-- meu anuncio -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3244338845125533"
+     data-ad-slot="3575960104"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </body>
 </html>
+
+
+
