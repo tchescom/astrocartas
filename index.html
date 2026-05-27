@@ -21,14 +21,16 @@
 }
 
 .ads-box{
-    width: 300px;
-    height: 250px;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border-radius: 12px;
+    width:300px;
+    min-width:300px;
+    height:250px;
+    min-height:250px;
+    background:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    border-radius:12px;
 }
 
 .close-ad{
@@ -347,6 +349,7 @@ footer{position:relative;z-index:10;text-align:center;padding:2rem 1rem;
 <body>
 
 <!-- POPUP ADSENSE -->
+<!-- POPUP ADSENSE -->
 <div class="ads-popup" id="adsPopup">
 
     <button class="close-ad" onclick="fecharAd()">✕</button>
@@ -354,10 +357,9 @@ footer{position:relative;z-index:10;text-align:center;padding:2rem 1rem;
     <div class="ads-box">
 
         <ins class="adsbygoogle"
-            style="display:inline-block;width:300px;height:250px"
+            style="display:block;width:300px;height:250px"
             data-ad-client="ca-pub-3244338845125533"
-            data-ad-slot="3575960104"
-            data-adtest="on">
+            data-ad-slot="3575960104">
         </ins>
 
     </div>
@@ -365,15 +367,19 @@ footer{position:relative;z-index:10;text-align:center;padding:2rem 1rem;
 </div>
 
 <script>
-window.addEventListener("load", () => {
+window.onload = function () {
 
     setTimeout(() => {
 
-        (adsbygoogle = window.adsbygoogle || []).push({});
+        try {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        } catch(e) {
+            console.log(e);
+        }
 
-    }, 1000);
+    }, 3000);
 
-});
+};
 
 function fecharAd(){
     document.getElementById("adsPopup").style.display = "none";
@@ -422,8 +428,7 @@ function fecharAd(){
     <p class="deck-sub">Feche os olhos por um instante, formule sua pergunta em silêncio e deixe sua intuição guiar sua mão até o arcano que pulsa em sua alma.</p>
     <div class="deck" id="deck"></div>
   </section>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3244338845125533"
-     crossorigin="anonymous"></script>
+
 <!-- meu anuncio -->
 <ins class="adsbygoogle"
      style="display:block"
@@ -944,9 +949,6 @@ function speak(text){
 if("speechSynthesis" in window){
   window.speechSynthesis.onvoiceschanged=()=>{};
 }
-</script>
-     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3244338845125533"
-     crossorigin="anonymous"></script>
 <!-- meu anuncio -->
 <ins class="adsbygoogle"
      style="display:block"
